@@ -1,0 +1,7 @@
+{
+  "name": "baltagram",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

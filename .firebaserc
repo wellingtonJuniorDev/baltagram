@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "baltagram-47f58": {
+      "hosting": {
+        "app": [
+          "baltagram-47f58"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<app-menu-modal></app-menu-modal>
+
+<ion-content>
+  <ion-card>
+    <ion-slides (ionSlideDidChange)="changeFilter()">
+      <ion-slide *ngFor="let filter of utilService.photoFilters" class="ion-text-center">
+        <img src="{{ photo }}" alt="" class="{{ filter }}" style="width: 100%;">
+        <small>{{ filter }}</small>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-card-content>
+      <form [formGroup]="form" novalidate>
+        <ion-list lines="none">
+          <ion-item>
+            <ion-input type="text" formControlName="title" placeholder="Título"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-textarea formControlName="message" placeholder="Mensagem" rows="3"></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <ion-button *ngIf="!location" (click)="getLocation()" color="danger" fill="clear" size="small">
+          <ion-icon name="location"></ion-icon> Ativar Localização
+        </ion-button>
+
+        <ion-button *ngIf="location" color="danger" fill="clear" size="small">
+          <ion-icon name="location"></ion-icon> {{ location }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <div>
+    <ion-button [disabled]="form.invalid" (click)="submit()" size="large" fill="outline" expand="block">
+      Enviar
+    </ion-button>
+  </div>
+
+
+</ion-content>

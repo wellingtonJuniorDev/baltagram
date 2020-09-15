@@ -1,0 +1,13 @@
+<app-menu-modal></app-menu-modal>
+
+<ion-content>
+  <ion-card>
+    <video id="video" width="100%" autoplay></video>
+    <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+  </ion-card>
+  <div>
+    <ion-button (click)="takePicture()" expand="block" fill="outline" size="large">
+      Tirar Foto
+    </ion-button>
+  </div>
+</ion-content>
